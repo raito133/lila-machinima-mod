@@ -1,6 +1,4 @@
-﻿using LilaMachinimaMod;
-using MelonLoader;
-using System.IO;
+﻿using MelonLoader;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Video;
@@ -13,6 +11,7 @@ namespace LilaMachinimaMod
     {
         VideoManager? _videoManager;
         DialogManager? _dialogManager;
+        readonly CustomFaceFactory customFaceFactory = new CustomFaceFactory();
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
@@ -20,6 +19,7 @@ namespace LilaMachinimaMod
             try
             {
                 SetLilaManagerComponents();
+                customFaceFactory.CreateCustomFacesFromFile("mods/config.json");
             }
             catch (System.Exception e)
             {
@@ -33,7 +33,7 @@ namespace LilaMachinimaMod
 
             if (Keyboard.current.f5Key.wasPressedThisFrame)
             {
-                if(_dialogManager == null)
+                if (_dialogManager == null)
                 {
                     LoggerInstance.Error("Dialog Manager is null!");
                     return;
