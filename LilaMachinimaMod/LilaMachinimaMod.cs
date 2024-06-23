@@ -1,17 +1,17 @@
-﻿using LilaMachinimaMod;
-using MelonLoader;
-using System.IO;
+﻿using MelonLoader;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Video;
 
-[assembly: MelonInfo(typeof(LilaMachinima.LilaMachinimaMod), "Lila Machinima Mod", "0.1.0", "Skeleton Programmer")]
-namespace LilaMachinima
+[assembly: MelonInfo(typeof(LilaMachinimaMod.LilaMachinimaMod), "Lila Machinima Mod", "0.2.0", "raito133")]
+[assembly: MelonPriority(200)]
+namespace LilaMachinimaMod
 {
     public class LilaMachinimaMod : MelonMod
     {
         VideoManager? _videoManager;
         DialogManager? _dialogManager;
+        readonly CustomFaceFactory customFaceFactory = new CustomFaceFactory();
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
@@ -19,6 +19,7 @@ namespace LilaMachinima
             try
             {
                 SetLilaManagerComponents();
+                customFaceFactory.CreateCustomFacesFromFile("mods/config.json");
             }
             catch (System.Exception e)
             {
@@ -30,9 +31,9 @@ namespace LilaMachinima
         {
             base.OnLateUpdate();
 
-            if (Keyboard.current.f5Key.isPressed)
+            if (Keyboard.current.f5Key.wasPressedThisFrame)
             {
-                if(_dialogManager == null)
+                if (_dialogManager == null)
                 {
                     LoggerInstance.Error("Dialog Manager is null!");
                     return;
@@ -40,7 +41,7 @@ namespace LilaMachinima
                 _dialogManager.LaunchDialog();
             }
 
-            if (Keyboard.current.f6Key.isPressed)
+            if (Keyboard.current.f6Key.wasPressedThisFrame)
             {
                 if(_videoManager == null)
                 {
