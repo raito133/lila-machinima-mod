@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Video;
 
-[assembly: MelonInfo(typeof(LilaMachinima.LilaMachinimaMod), "Lila Machinima Mod", "0.1.0", "Skeleton Programmer")]
-namespace LilaMachinima
+[assembly: MelonInfo(typeof(LilaMachinimaMod.LilaMachinimaMod), "Lila Machinima Mod", "0.2.0", "raito133")]
+[assembly: MelonPriority(200)]
+namespace LilaMachinimaMod
 {
     public class LilaMachinimaMod : MelonMod
     {
