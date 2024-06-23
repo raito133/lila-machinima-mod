@@ -30,7 +30,7 @@ namespace LilaMachinima
         {
             base.OnLateUpdate();
 
-            if (Keyboard.current.f5Key.isPressed)
+            if (Keyboard.current.f5Key.wasPressedThisFrame)
             {
                 if(_dialogManager == null)
                 {
@@ -40,7 +40,7 @@ namespace LilaMachinima
                 _dialogManager.LaunchDialog();
             }
 
-            if (Keyboard.current.f6Key.isPressed)
+            if (Keyboard.current.f6Key.wasPressedThisFrame)
             {
                 if(_videoManager == null)
                 {
