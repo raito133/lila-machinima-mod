@@ -78,6 +78,10 @@ If using custom faces, please note that currently you can provide only static im
 
 If you've provided the files above, you can launch the video using `F6` key. The dialog is launched using `F5` key.
 
+## Example of use
+This video was made using this mod:  
+[![thumbnail of who is lila video](https://img.youtube.com/vi/L9LU_jDgfZM/0.jpg)](https://www.youtube.com/watch?v=L9LU_jDgfZM)
+
 ## Acknowledgments
 
 Inspired by TheHaterOfBeards mods: [I learned how to mod the dialogue in who's lila](https://www.youtube.com/watch?v=g54Q0HkHOMM) [Who's Lila? Video Player](https://www.youtube.com/watch?v=rwHQdltWmN0).
